@@ -45,6 +45,14 @@ class SevenSegment:
     # Warning: This function assumes that the colon is character '2',
     # which is the case on 4 char displays, but may need to be modified
     # if another display type is used
+    
+    # To seperately control the different colons, use the following values:
+    # 0x02 - center colon
+    # 0x04 - left colon - upper dot
+    # 0x08 - left colon - lower dot
+    # 0x10 - decimal point
+    # 0xFFFF - everything
+  
     if (state):
       self.disp.setBufferRow(2, 0xFFFF)
     else:
