@@ -23,7 +23,8 @@ while(True):
   # Set minutes
   segment.writeDigit(3, int(minute / 10))   # Tens
   segment.writeDigit(4, minute % 10)        # Ones
-  # Toggle colon
+  # Toggle colon as configured in Adafruit_7Segment.py
+  # (by using even seconds vs. odd seconds)
   segment.setColon(second % 2)              # Toggle colon at 1Hz
   # Wait one second
   time.sleep(1)
