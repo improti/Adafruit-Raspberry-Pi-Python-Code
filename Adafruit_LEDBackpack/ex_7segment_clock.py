@@ -27,8 +27,8 @@ while(True):
   # Toggle colon(s) as configured in Adafruit_7Segment.py
   # every second (by using even seconds vs. odd seconds)
   if (second % 2 == 0):                 # reminder = 0 -> even second
-    self.segment.setColon(0)            # turn colons off
+    segment.setColon(0)                 # turn colons off
   else:                                 # reminder != 0 -> odd second
-    self.segment.setColon(1)            # turn colons on
+    segment.setColon(1)                 # turn colons on
   
   time.sleep(1)                             # Wait one second
