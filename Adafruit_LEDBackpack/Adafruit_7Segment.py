@@ -13,6 +13,18 @@ from Adafruit_LEDBackpack import LEDBackpack
 
 class SevenSegment:
   disp = None
+
+  # Some 7Segment-Display have several different colons, e.g. the
+  # 1,2" display. To seperately control such different colons
+  # use the following values where applicable:
+  #
+  # 0x00 - nothing
+  # 0x02 - center colon
+  # 0x04 - left colon - upper dot
+  # 0x08 - left colon - lower dot
+  # 0x10 - decimal point
+  # 0xFFFF - everything (default)
+  mask_colons = 0xFFFF
  
   # Hexadecimal character lookup table (row 1 = 0..9, row 2 = A..F)
   digits = [ 0x3F, 0x06, 0x5B, 0x4F, 0x66, 0x6D, 0x7D, 0x07, 0x7F, 0x6F, \
@@ -58,7 +70,7 @@ class SevenSegment:
     # 0xFFFF - everything
   
     if (state):
-      self.disp.setBufferRow(2, 0xFFFF)
+      self.disp.setBufferRow(2, self.mask_colons)
     else:
       self.disp.setBufferRow(2, 0)
 
