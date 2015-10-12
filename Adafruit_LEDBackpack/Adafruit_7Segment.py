@@ -46,7 +46,11 @@ class SevenSegment:
     # which is the case on 4 char displays, but may need to be modified
     # if another display type is used
     
-    # To seperately control the different colons, use the following values:
+    # Some 7Segment-Display have several different colons, e.g. the
+    # 1,2" display. To seperately control such different colons
+    # use the following values where applicable:
+    #
+    # 0x00 - nothing
     # 0x02 - center colon
     # 0x04 - left colon - upper dot
     # 0x08 - left colon - lower dot
