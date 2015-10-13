@@ -52,7 +52,7 @@ class SevenSegment:
     "Sets a digit using the raw 16-bit value"
     if (charNumber > 7):
       return
-     if ((self.display_inverted) & (charNumber < 5)):
+    if ((self.display_inverted) & (charNumber < 5)):
       "if inverted we need to use reverse character positioning"
       charNumber = 4 - charNumber
     # Set the appropriate digit
